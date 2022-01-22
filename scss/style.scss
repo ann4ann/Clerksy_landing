@@ -1,0 +1,502 @@
+@import 'normalize.scss';
+
+// === mixins ===
+@mixin font-Noto_Sans {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+@mixin font-Averia_Serif_Libre {
+    font-family: 'Averia Serif Libre', cursive;
+}
+// === mixins ===
+
+// === variables ===
+$color-green: #163a24;
+$color-white: #fbfaf7;
+// === variables ===
+
+// === common ===
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include font-Noto_Sans;
+    color: $color-green;
+}
+
+.section-outer {}
+.section-inner {
+    width: 1270px;
+    margin: 0 auto;
+}
+
+@mixin start-button {
+    font-size: 16px;
+    margin: 0;
+    padding: 15px 25px;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-main {
+    @include start-button;
+
+    background-color: #198c36;
+    color: $color-white;
+}
+
+.btn-secondary {
+    @include start-button;
+
+    background-color: #fab5a0;
+    color: $color-green;
+}
+
+.description-item {
+
+    &__title {
+        @include font-Averia_Serif_Libre;
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 27px;
+    }
+    &__subtitle {
+        @include font-Averia_Serif_Libre;
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 23px;
+    }
+    &__text {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 18px;
+    }
+    
+}
+
+a {
+    text-decoration: none;
+    color: #198c36;
+}
+// === common ===
+
+
+// === header ===
+.section-header {
+    background-color: $color-green;
+    color: $color-white;
+
+    &__menu {
+        padding: 25px 45px;
+        display: flex;
+        justify-content: space-between;
+        
+        
+        &-logo {      
+            img {
+                width: 155px;
+                height: auto;
+            }
+        }
+        &-optinons {
+            display: flex;
+            list-style: none;
+            padding-right: 10px;
+            
+            li {
+                align-self: center;
+                font-size: 16px;
+                line-height: 22px;
+
+                & + li {
+                    margin-left: 24px;
+                }
+
+                a {
+                    color: $color-white;
+                }
+                
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        
+        &-item {
+            align-self: center;
+            padding-left: 45px;
+            padding-right: 20px;
+
+            .title {
+                @include font-Averia_Serif_Libre;
+                font-size: 48px;
+                line-height: 65px;
+                padding-right: 60px;
+                margin-bottom: 20px;
+            }
+            .text {
+                font-size: 18px;
+                line-height: 27px;
+            }
+        }
+        &-img {
+            align-self: flex-end;
+            
+            img {
+                width: 730px;
+                height: auto;
+            }
+        }
+    }
+}
+// === header ===
+
+// === promo ===
+.bloks-1 {
+    margin-top: 130px;
+    margin-bottom: 115px;
+}
+.section-promo {
+
+    &__left, &__right {
+        padding: 0 145px;
+        display: flex;
+        justify-content: space-between;
+
+        .description-item {
+            width: 380px;
+            align-self: center;
+        }
+
+        &-img {
+            .img {
+                width: 490px;
+            }
+        }
+    }
+}
+// === promo ===
+
+// === partners ===
+.section-partners {
+    text-align: center;
+    margin-bottom: 120px;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+
+        .description-item {
+            margin-bottom: 66px;
+        }
+        
+        li {
+            align-self: center;
+
+            & + li {
+                margin-left: 86px;
+            }
+        }
+    }
+}
+// === partners ===
+
+// === advantages ===
+.section-advantages {
+    padding-bottom: 140px;
+
+    background-color: $color-green;
+    color: $color-white;
+
+    &__title {
+        text-align: center;
+        padding: 66px;
+        margin-bottom: 0;
+    }
+    &__items {
+        display: flex;
+        justify-content: center;
+
+        .description-item {
+            text-align: center;
+
+            & + .description-item {
+                margin-left: 105px;
+            }
+
+            &__icon {
+                margin-bottom: 30px;
+
+                img {
+                    height: 150px;
+                }
+            }
+            &__text {
+                width: 200px;
+            }
+        }
+    }
+    
+}
+// === advantages ===
+
+// === offer ===
+.section-offer {
+    text-align: center;
+    padding-top: 115px;
+    padding-bottom: 135px;
+    background-color: #f2efe6;
+
+    .description-item {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    &-img {
+        img {
+            width: 95%;
+            height: auto;
+        }
+    }
+}
+// === offer ===
+
+// === etc ===
+.bloks-2 {
+    margin-top: 180px;
+    margin-bottom: 120px;
+}
+// === etc ===
+
+// === responsibility ===
+.section-responsibility {
+    margin: 0 auto 120px;
+
+    &__title, &__text {
+        text-align: center;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+
+        .description-item {
+            padding: 50px 40px 65px;
+            width: 353px;
+            box-shadow: 5px 5px 20px #E9E4D5;
+            border-radius: 15px;
+
+            & + .description-item {
+                margin-left: 40px;
+            }
+
+            &__icon {
+                margin-bottom: 20px;
+
+                img {
+                    height: 75px;
+                }
+            }
+            &__subtitle {
+                margin-bottom: 23px;
+            }
+            &__text {
+                font-size: 16px;
+
+                li {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+// === responsibility ===
+
+// === stages ===
+.section-stages {
+    background-color: #f2efe6;
+    padding-top: 115px;
+    padding-bottom: 125px;
+    text-align: center;
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        .description-item {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            &__subtitle {
+                margin-bottom: 23px;
+            }
+            &__text {
+                width: 260px;
+            }
+        }
+
+        .extra {
+            background: url(../img/rounds.png) no-repeat 50% 50%;
+            background-size: 100%;
+            margin-left: 50px;
+        }
+
+        .arrow {
+            align-self: center;
+            
+            .description-item__icon {
+                align-self: center;
+                margin-left: 35px;
+                margin-right: 35px;
+
+                img {
+                    width: 75px;
+                }
+            }
+        }        
+    }
+}
+// === stages ===
+
+// === book ===
+.bloks-3 {
+    margin-top: 120px;
+    margin-bottom: 125px;
+}
+// === book ===
+
+// === freecall ===
+.section-freecall {
+    position: relative;    
+    background-color: $color-green;
+    color: $color-white;
+    height: 415px;
+    text-align: center;
+
+    &__bg-left {
+        position: absolute;
+        top: 20px;
+        left: 0px;
+    }
+    &__bg-right {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+    }
+
+    .description-item {
+        padding-top: 115px;
+        
+    }
+}
+// === freecall ===
+
+// === stayup ===
+.section-stayup {
+    background-color: #f2efe6;
+
+    &__items {
+        padding: 55px 45px;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        
+    
+        &-news {
+            width: 500px;
+        }
+        
+    
+        &-signup {
+            display: flex;
+            flex-direction: column;
+            width: 590px;
+
+            .form {
+                margin-bottom: 13px;
+                position: relative;
+                display: flex;
+    
+                input {
+                    outline: none; //убираем обводку при нажатии
+                    width: 550px;
+                    font-size: 16px;
+                    margin: 0;
+                    padding: 15px 25px;
+                    border: none;
+                    border-radius: 25px;
+                    align-self: flex-start;
+                }
+                button {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+            .text {
+                align-self:flex-start;
+                font-size: 14px;
+                line-height: 21px;
+                width: 524px;
+            }
+        }
+    }
+
+
+}
+// === stayup ===
+
+// === footer ===
+.section-footer {
+    &__socials {
+        display: flex;
+        justify-content: space-between;
+        padding: 45px;
+
+        &-logo {}
+        &-subtitle {
+            font-size: 24px;
+        }
+        &-icons {
+            display: flex;
+            
+            li {
+                align-self: center;
+                list-style: none;
+    
+                & + li {
+                    margin-left: 14px;
+                }
+            }
+
+            img {
+                height: 30px;
+            }
+        }
+    }
+    &__copywrite {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 45px;
+        font-size: 14px;
+
+        &-text {}
+        &-links {
+            display: flex;
+
+            li {
+                list-style: none;
+
+                & + li {
+                    margin-left: 14px;
+                }
+            }
+        }
+    }
+}
+// === footer ===
